@@ -6,7 +6,9 @@ var Schema = mongoose.Schema;
 var gameSchema = new Schema({
     name: { type: String, required: true, unique: true },
     duration: { type: Number },
-    numberOfPlayers: { type: Number }
+    numberOfPlayers: { type: Number },
+    publishedDate: { type: Date },
+    votes: { type: Number }
 });
 
 module.exports = mongoose.model('Game', gameSchema);

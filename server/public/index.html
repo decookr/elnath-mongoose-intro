@@ -1,12 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Elnath Mongoose Intro</title>
+    <link rel="stylesheet" href="vendors/bootstrap.css">
+    <script src="vendors/angular.js"></script>
+    <script src="scripts/client.js"></script>
 </head>
-<body>
-    <h1>Elnath Mongoose Intro</h1>
+
+<body ng-app="GameApp" ng-controller="GameController as vm">
+    <div class="container">
+        <h1>Elnath Mongoose Intro</h1>
+        {{vm}}
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Duration</th>
+                    <th>Players</th>
+                    <th>Date Published</th>
+                    <th>Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="game in vm.games">
+                    <td>
+                        {{game.name}}
+                    </td>
+                    <td>
+                        {{game.duration}}
+                    </td>
+                    <td>
+                        {{game.numberOfPlayers}}
+                    </td>
+                    <td>
+                        {{game.publishedDate}}
+                    </td>
+                    <td>
+                        {{game.votes}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
+
 </html>
