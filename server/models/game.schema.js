@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
+
 //create a new Schema for game
 //this will enforce our object properties
 var gameSchema = new Schema({
