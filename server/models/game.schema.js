@@ -8,7 +8,7 @@ var gameSchema = new Schema({
     duration: { type: Number },
     numberOfPlayers: { type: Number },
     publishedDate: { type: Date },
-    votes: { type: Number }
+    votes: { type: Number, default: 0 }
 });
 
 module.exports = mongoose.model('Game', gameSchema);

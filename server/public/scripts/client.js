@@ -15,17 +15,17 @@ app.controller('GameController', ['$http', function ($http) {
         });
     };
 
-    // self.addNewFood = function (newFood) {
-    //     $http({
-    //         method: 'POST',
-    //         url: '/food',
-    //         data: newFood,
-    //     }).then(function (response) {
-    //         console.log('response', response);
-    //         self.newFood = { is_hot: false }; //this clears our the input fields 
-    //         self.getFood();
-    //     });
-    // }
+    self.addNewGame = function (newGame) {
+        $http({
+            method: 'POST',
+            url: '/game',
+            data: newGame, "votes": 0
+        }).then(function (response) {
+            console.log('response', response);
+            self.newGame = {}; //this clears our the input fields 
+            self.getGames();
+        });
+    }
 
     self.getGames();
 
